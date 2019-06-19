@@ -1,0 +1,30 @@
+kotlin {
+    iosArm32()
+    iosArm64()
+    iosX64()
+
+    sourceSets {
+ 
+
+        iosX64Main {
+            kotlin.srcDir('src/iosMain/kotlin')
+            resources.srcDir('src/iosMain/resources')
+        }
+        iosX64Test {
+            kotlin.srcDir('src/iosTest/kotlin')
+            resources.srcDir('src/iosTest/resources')
+        }
+        iosArm32Main {
+            dependsOn iosX64Main
+        }
+        iosArm32Test {
+            dependsOn iosX64Test
+        }
+        iosArm64Main {
+            dependsOn iosX64Main
+        }
+        iosArm64Test {
+            dependsOn iosX64Test
+        }
+    }
+}

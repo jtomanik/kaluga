@@ -11,3 +11,6 @@ pluginManagement {
 rootProject.name = 'components'
 
 enableFeaturePreview('GRADLE_METADATA')
+
+include ':android'
+include ':ios'
