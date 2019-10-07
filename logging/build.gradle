@@ -9,10 +9,6 @@ apply from: "../gradle/publishable_component.gradle"
 
 version = gradle.library_version
 
-repositories {
-    maven { url "https://dl.bintray.com/pocketbyte/hydra/" }
-}
-
 android {
     testOptions {
         unitTests.returnDefaultValues = true

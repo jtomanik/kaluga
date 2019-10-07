@@ -1,3 +1,7 @@
+@file:Suppress("UNCHECKED_CAST")
+
+apply(from = "../gradle/publishable_component.gradle")
+
 plugins {
     kotlin("multiplatform")
     id("jacoco")
@@ -7,15 +11,6 @@ plugins {
 
 val ext =  (gradle as ExtensionAware).extra
 
-apply(from = "../gradle/publishable_component.gradle")
-
-group = "com.splendo.kaluga"
-version = ext["library_version"]!!
-
-
-repositories {
-    maven("https://dl.bintray.com/pocketbyte/hydra/")
-}
 
 dependencies {
     implementation("com.google.android.gms:play-services-location:17.0.0")
@@ -32,40 +27,12 @@ kotlin {
     }
 }
 
-val singleSet =ext["ios_one_sourceset"] as Boolean
-
-if (singleSet) {
-
+(ext["ios_suffix_archs"] as List<String>).forEach {
     kotlin {
         sourceSets {
-            getByName("iosMain") {
+            getByName("ios${it}Main") {
                 dependencies {
-                    implementation(project(":logging", "iosDefault"))
-                }
-            }
-        }
-    }
-} else {
-
-    kotlin {
-        sourceSets {
-            getByName("iosX64Main") {
-                dependencies {
-                    implementation(project(":logging", "iosX64Default"))
-                }
-            }
-        }
-        sourceSets {
-            getByName("iosArm64Main") {
-                dependencies {
-                    implementation(project(":logging", "iosArm64Default"))
-                }
-            }
-        }
-        sourceSets {
-            getByName("iosArm32Main") {
-                dependencies {
-                    implementation(project(":logging", "iosArm32Default"))
+                    implementation(project(":logging", "ios${it}Default"))
                 }
             }
         }

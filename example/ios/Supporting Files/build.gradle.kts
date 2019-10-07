@@ -6,10 +6,9 @@ buildscript {
     }
 
     dependencies {
-
-        val kotlinVer = (gradle as ExtensionAware).extra["kotlin_version"]
-        classpath("com.android.tools.build:gradle:3.6.0-alpha12")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVer")
+        val ext = (gradle as ExtensionAware).extra
+        classpath("com.android.tools.build:gradle:${ext["android_build_version"]}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${ext["kotlin_version"]}")
         classpath("com.google.gms:google-services:4.3.1")
     }
 }

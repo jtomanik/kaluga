@@ -1,2 +1,5 @@
+group = "com.splendo.kaluga"
+version = gradle.ext.library_version
+
 apply from: "../gradle/component.gradle"
 apply from: "../gradle/jacoco.gradle"

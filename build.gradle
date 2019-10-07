@@ -8,27 +8,18 @@ buildscript {
 //        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.0-alpha12'
+        classpath "com.android.tools.build:gradle:$android_build_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$gradle.ext.kotlin_version"
         classpath 'com.google.gms:google-services:4.3.2'
     }
 }
 
 plugins {
-    id 'kotlin-multiplatform'
+    id "org.jetbrains.kotlin.multiplatform"
     id 'maven-publish'
 }
 
-allprojects {
-    repositories {
-        google()
-        jcenter()
-
-// uncomment for early access / dev releases
-//        maven { url 'https://dl.bintray.com/kotlin/kotlin-dev' }
-//        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
-    }
-}
+apply from:"gradle/root.gradle.kts"
 
 group 'com.splendo.kaluga'
 version gradle.ext.library_version

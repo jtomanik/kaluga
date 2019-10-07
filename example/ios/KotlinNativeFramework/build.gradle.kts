@@ -21,11 +21,11 @@ kotlin {
             val ext = (gradle as ExtensionAware).extra
 
             val singleSet = ext["ios_one_sourceset"] as Boolean
-            var iosArch = ext["ios_arch"]
-            val orgArch = iosArch
-
-            if (singleSet)
-                iosArch = "ios"
+            val detectedArchitecture = ext["ios_arch"]
+            val iosArch = when (singleSet) {
+                true -> "ios"
+                false -> detectedArchitecture
+            }
 
             dependencies {
 
@@ -35,7 +35,7 @@ kotlin {
                     implementation(project(":Components", "${iosArch}Default"))
                 } else {
                     val libraryVersion = ext["library_version"]
-                    implementation("com.splendo.kaluga:Components-$orgArch:$libraryVersion")
+                    implementation("com.splendo.kaluga:Components-$detectedArchitecture:$libraryVersion")
                 }
 
             }
