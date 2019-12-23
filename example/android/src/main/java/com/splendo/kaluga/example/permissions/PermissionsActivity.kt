@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.splendo.kaluga.example.permissions.bluetooth.BluetoothPermissionsDemoActivity
-import kotlinx.android.synthetic.main.activity_permissions_list.*
+import kotlinx.android.synthetic.main.activity_permissions.*
 import com.splendo.kaluga.example.R
 
-class PermissionsDemoListActivity : AppCompatActivity(R.layout.activity_permissions_list) {
+class PermissionsActivity : AppCompatActivity(R.layout.activity_permissions) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

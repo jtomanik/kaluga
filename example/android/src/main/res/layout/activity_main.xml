@@ -11,6 +11,24 @@
             android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_feature_alerts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alerts"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_feature_collection_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Collection View"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_feature_hud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HUD"/>
+
+        <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_feature_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -22,18 +40,5 @@
                 android:layout_height="wrap_content"
                 android:text="Permissions"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_feature_alerts"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Alerts"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_feature_loading_indicator"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Loading Indicator"/>
-
     </androidx.appcompat.widget.LinearLayoutCompat>
-
 </androidx.core.widget.NestedScrollView>
