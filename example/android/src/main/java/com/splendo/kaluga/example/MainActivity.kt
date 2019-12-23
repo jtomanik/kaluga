@@ -7,9 +7,9 @@ import com.splendo.kaluga.example.alerts.AlertsActivity
 import com.splendo.kaluga.example.loading.LoadingActivity
 import com.splendo.kaluga.example.location.LocationActivity
 import com.splendo.kaluga.example.permissions.PermissionsDemoListActivity
-import kotlinx.android.synthetic.main.activity_features_list.*
+import kotlinx.android.synthetic.main.activity_main.*
 
-class FeaturesListActivity : AppCompatActivity(R.layout.activity_features_list) {
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

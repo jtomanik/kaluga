@@ -32,10 +32,10 @@ import com.splendo.kaluga.location.Location
 import com.splendo.kaluga.location.LocationFlowable
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import kotlinx.android.synthetic.main.activity_main.info
+import kotlinx.android.synthetic.main.activity_location.info
 
 @SuppressLint("SetTextI18n")
-class LocationActivity : AppCompatActivity(R.layout.activity_main) {
+class LocationActivity : AppCompatActivity(R.layout.activity_location) {
 
     private lateinit var location: LocationFlowable
     
