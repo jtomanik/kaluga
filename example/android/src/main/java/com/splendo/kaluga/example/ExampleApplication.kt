@@ -7,6 +7,7 @@ class ExampleApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        ApplicationHolder.application = this
+        // FIXME: https://github.com/splendo/kaluga/issues/92
+//        ApplicationHolder.application = this
     }
 }
