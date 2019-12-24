@@ -32,7 +32,6 @@ android {
         exclude 'META-INF/kotlinx-coroutines-core.kotlin_module'
         exclude 'META-INF/shared_debug.kotlin_module'
     }
-
 }
 
 dependencies {
@@ -44,22 +43,24 @@ dependencies {
 
     if (gradle.ext.exampleAsRoot) {
         // if the example is the root we use a maven dependency instead of the project
-        implementation "com.splendo.kaluga:location:$gradle.ext.library_version"
-        implementation "com.splendo.kaluga:permissions:$gradle.ext.library_version"
-        implementation "com.splendo.kaluga:base:$gradle.ext.library_version"
-        implementation "com.splendo.kaluga:logging:$gradle.ext.library_version"
         implementation "com.splendo.kaluga:alerts:$gradle.ext.library_version"
+        implementation "com.splendo.kaluga:base:$gradle.ext.library_version"
+        implementation "com.splendo.kaluga:collectionView:$gradle.ext.library_version"
         implementation "com.splendo.kaluga:hud:$gradle.ext.library_version"
+        implementation "com.splendo.kaluga:location:$gradle.ext.library_version"
+        implementation "com.splendo.kaluga:logging:$gradle.ext.library_version"
+        implementation "com.splendo.kaluga:permissions:$gradle.ext.library_version"
         implementation project(':shared')
     }
     else {
-        implementation project(':location')
-        implementation project(':base')
-        implementation project(':shared')
-        implementation project(":permissions")
-        implementation project(":logging")
         implementation project(":alerts")
+        implementation project(':base')
+        implementation project(':collectionView')
         implementation project(":hud")
+        implementation project(':location')
+        implementation project(":logging")
+        implementation project(":permissions")
+        implementation project(':shared')
     }
 
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0-beta01'

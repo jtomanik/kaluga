@@ -3,6 +3,7 @@ package com.splendo.kaluga.example.collectionView
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.splendo.kaluga.collectionView.CollectionViewItem
 import com.splendo.kaluga.example.R
 import kotlinx.android.synthetic.main.activity_collection_view.*
 

@@ -38,14 +38,20 @@ apply("../../../gradle/ext.gradle")
 val ext =  (gradle as ExtensionAware).extra
 
 if (!(ext["exampleAsRoot"] as Boolean)) {
-    include(":test-utils")
-    project(":test-utils").projectDir = file("../../../test-utils")
-
-    include(":location")
-    project(":location").projectDir = file("../../../location")
+    include(":alerts")
+    project(":alerts").projectDir = file("../../../alerts")
 
     include(":base")
     project(":base").projectDir = file("../../../base")
+
+    include(":collectionView")
+    project(":collectionView").projectDir = file("../../../collectionView")
+
+    include(":hud")
+    project(":hud").projectDir = file("../../../hud")
+
+    include(":location")
+    project(":location").projectDir = file("../../../location")
 
     include(":logging")
     project(":logging").projectDir = file("../../../logging")
@@ -53,11 +59,8 @@ if (!(ext["exampleAsRoot"] as Boolean)) {
     include(":permissions")
     project(":permissions").projectDir = file("../../../permissions")
 
-    include(":alerts")
-    project(":alerts").projectDir = file("../../../alerts")
-
-    include(":hud")
-    project(":hud").projectDir = file("../../../hud")
+    include(":test-utils")
+    project(":test-utils").projectDir = file("../../../test-utils")
 }
 
 include(":android")
